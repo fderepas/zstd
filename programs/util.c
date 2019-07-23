@@ -59,8 +59,8 @@ int UTIL_setFileStat(const char *filename, stat_t *statbuf)
     if (!UTIL_isRegularFile(filename))
         return -1;
 
-    timebuf.actime = time(NULL);
-    timebuf.modtime = statbuf->st_mtime;
+    //timebuf.actime = time(NULL);
+    //timebuf.modtime = statbuf->st_mtime;
     res += utime(filename, &timebuf);  /* set access and modification times */
 
 #if !defined(_WIN32)
